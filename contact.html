@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | BurkeHaven Counseling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="imagine_images/bhc-logo.png" alt="BurkeHaven Counseling Logo">
+        BurkeHaven
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Stories</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: url('imagine_images/qCS52.jpg'); min-height: 40vh;">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>We would be honored to hear from you.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">Contact BurkeHaven Counseling</h2>
+    <p class="section-subtitle">Reach out to schedule a free initial consultation or ask any questions. We typically respond within one business day.</p>
+
+    <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+      <div>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="message">How can we support you? *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <div class="error-message"></div>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div id="loading" class="loading">
+          <p>Sending your message...</p>
+        </div>
+
+        <div id="success-message" class="success-message">
+          <h3>Thank you.</h3>
+          <p>Your message has been received. We will be in touch soon. In the meantime, take a gentle breath — you have already taken a meaningful step.</p>
+        </div>
+      </div>
+
+      <div>
+        <img src="imagine_images/bhc-logo.png" alt="BurkeHaven Counseling logo" style="border-radius: 12px; margin-bottom: 1.5rem; box-shadow: var(--shadow); max-width: 320px;">
+        <h3>Other Ways to Reach Us</h3>
+        <p style="margin: 1rem 0;"><strong>Email:</strong> <a href="mailto:Sandi@burkehavencounseling.com">Sandi@burkehavencounseling.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+14053650243">405-365-0243</a></p>
+        <p style="margin-top: 1rem;"><strong>Address:</strong><br>3810 N. Peniel Avenue<br>Bethany, OK 73127</p>
+        <p style="margin-top: 1rem; color: var(--text-soft);">In-person and virtual sessions available. Serving Oklahoma City, Bethany, and surrounding areas. Sandra Thomas-Tyler, LPC.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>BurkeHaven Counseling</h3>
+        <p>A haven of peace and safety for families and individuals.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Stories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p><a href="mailto:Sandi@burkehavencounseling.com">Sandi@burkehavencounseling.com</a></p>
+        <p><a href="tel:+14053650243">405-365-0243</a></p>
+        <p>3810 N. Peniel Avenue<br>Bethany, OK 73127</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BurkeHaven Counseling LLC. All rights reserved. Owned and operated by BurkeHaven Counseling.</p>
+      <p>This website is for informational purposes only and does not provide emergency services. If you are in crisis, please call or text 988 (Suicide & Crisis Lifeline) or go to your nearest emergency room.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
