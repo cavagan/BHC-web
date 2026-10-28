@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <nav>
@@ -60,6 +61,15 @@
             <textarea id="message" name="message" rows="5" required></textarea>
             <div class="error-message"></div>
           </div>
+          <div class="hp-field" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="captcha-wrap">
+            <div class="cf-turnstile" id="turnstile-widget" data-theme="light"></div>
+            <div class="error-message" id="captcha-error"></div>
+            <p class="captcha-note">Protected by Cloudflare Turnstile.</p>
+          </div>
           <button type="submit" class="btn">Send Message</button>
         </form>
 
@@ -76,7 +86,7 @@
       <div>
         <img src="imagine_images/bhc-logo.png" alt="BurkeHaven Counseling logo" style="border-radius: 12px; margin-bottom: 1.5rem; box-shadow: var(--shadow); max-width: 320px;">
         <h3>Other Ways to Reach Us</h3>
-        <p style="margin: 1rem 0;"><strong>Email:</strong> <a href="mailto:Sandi@burkehavencounseling.com">Sandi@burkehavencounseling.com</a></p>
+        <p style="margin: 1rem 0;"><strong>Email:</strong> <a href="mailto:connect@burkehavencounseling.com">connect@burkehavencounseling.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+14053650243">405-365-0243</a></p>
         <p style="margin-top: 1rem;"><strong>Address:</strong><br>3810 N. Peniel Avenue<br>Bethany, OK 73127</p>
         <p style="margin-top: 1rem; color: var(--text-soft);">In-person and virtual sessions available. Serving Oklahoma City, Bethany, and surrounding areas. Sandra Thomas-Tyler, LPC.</p>
@@ -98,7 +108,7 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-contact">
-        <p><a href="mailto:Sandi@burkehavencounseling.com">Sandi@burkehavencounseling.com</a></p>
+        <p><a href="mailto:connect@burkehavencounseling.com">connect@burkehavencounseling.com</a></p>
         <p><a href="tel:+14053650243">405-365-0243</a></p>
         <p>3810 N. Peniel Avenue<br>Bethany, OK 73127</p>
       </div>

@@ -1,6 +1,6 @@
 # BHC-web
 
-**BurkeHaven Counseling LLC** official website — early draft **v0.0.1**
+**BurkeHaven Counseling LLC** official website — **v0.1.0**
 
 A multi-page static website for BurkeHaven Counseling, a family-focused counseling practice in Bethany, Oklahoma, serving the Oklahoma City metro area.
 
@@ -29,7 +29,7 @@ Sandra (Sandi) Thomas-Tyler, LPC
 3810 N. Peniel Avenue  
 Bethany, OK 73127  
 405-365-0243  
-Sandi@burkehavencounseling.com
+connect@burkehavencounseling.com
 
 ## Preview
 

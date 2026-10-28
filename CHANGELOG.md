@@ -2,6 +2,21 @@
 
 All notable changes to the BurkeHaven Counseling website will be documented in this file.
 
+## [0.1.0] - 2026-10-27
+
+### Added
+- Cloudflare Turnstile human verification on the contact form (free widget; preview uses Cloudflare’s always-pass test site key)
+- Hidden honeypot field on the contact form
+- Placeholder headshot of Sandra Thomas-Tyler, LPC, cropped from the official flyer
+
+### Changed
+- Public contact email is now connect@burkehavencounseling.com on the contact page, every footer, and the style guide (HTML and PDF)
+- About page philosophy row is a three-column layout: headshot, centered text, cabin logo, aligned to the width of the cards below
+- Hero heading and subheading on every page increased by 2pt
+
+### Notes
+- The contact form still confirms on the page only. Set `FORM_ENDPOINT` in `script.js` to deliver messages, and replace `TURNSTILE_SITE_KEY` with the practice’s Cloudflare Turnstile site key. Secret-key checks must happen on the server.
+
 ## [0.0.1] - 2026-10-19
 
 ### Added
