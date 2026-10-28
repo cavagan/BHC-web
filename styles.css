@@ -13,12 +13,15 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { overflow-x: hidden; }
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
   background: var(--cream);
   line-height: 1.7;
   font-size: 16px;
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, h4 {
@@ -28,9 +31,9 @@ h1, h2, h3, h4 {
   font-weight: 400;
 }
 
-h1 { font-size: 3.2rem; }
-h2 { font-size: 2.6rem; }
-h3 { font-size: 1.8rem; font-family: 'Playfair Display', serif; }
+h1 { font-size: clamp(2.15rem, 5.2vw, 3.35rem); }
+h2 { font-size: clamp(1.85rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.4vw, 1.8rem); font-family: 'Playfair Display', serif; }
 
 a { color: var(--navy-light); text-decoration: none; transition: color 0.3s ease; }
 a:hover { color: var(--navy); }
@@ -61,13 +64,14 @@ nav {
   align-items: center;
   gap: 0.75rem;
   font-family: 'Great Vibes', cursive;
-  font-size: 1.9rem;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
   color: var(--navy);
+  min-width: 0;
 }
 
-.logo img { height: 48px; width: auto; }
+.logo img { height: 48px; width: auto; max-width: 56px; flex-shrink: 0; }
 
-.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 1.2rem 1.8rem; list-style: none; justify-content: flex-end; }
 .nav-links a { color: var(--text); font-weight: 500; position: relative; }
 .nav-links a::after {
   content: '';
@@ -109,14 +113,21 @@ nav {
   background: linear-gradient(to bottom, rgba(15, 36, 64, 0.45), rgba(15, 36, 64, 0.65));
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 850px; padding: 2rem; }
+.hero-content { position: relative; z-index: 1; max-width: 850px; padding: 2rem 1.25rem; width: 100%; }
 .hero h1 {
   color: white;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
   margin-bottom: 1rem;
-  font-size: calc(3.2rem + 2pt);
+  font-size: clamp(2.2rem, 6vw, calc(3.2rem + 2pt));
 }
-.hero p { font-size: calc(1.25rem + 2pt); margin-bottom: 2rem; opacity: 0.95; }
+.hero p { font-size: clamp(1rem, 2.5vw, calc(1.25rem + 2pt)); margin-bottom: 2rem; opacity: 0.95; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
 
 .btn {
   display: inline-block;
@@ -140,7 +151,7 @@ section { padding: 4.5rem 2rem; max-width: 1200px; margin: 0 auto; }
 .section-subtitle { text-align: center; color: var(--text-soft); max-width: 720px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
 
 /* Cards */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.8rem; }
 .card {
   background: white;
   border-radius: 12px;
@@ -149,7 +160,7 @@ section { padding: 4.5rem 2rem; max-width: 1200px; margin: 0 auto; }
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(26,54,93,0.15); }
-.card img { height: 200px; object-fit: cover; width: 100%; }
+.card img { height: clamp(160px, 28vw, 220px); object-fit: cover; width: 100%; }
 .card-content { padding: 1.4rem; }
 .card h3 { margin-bottom: 0.6rem; }
 
@@ -214,24 +225,41 @@ footer {
 .footer-bottom p { margin-bottom: 0.4rem; }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .nav-links {
     display: none;
     position: absolute;
     top: 100%; left: 0; right: 0;
     background: white;
     flex-direction: column;
+    align-items: flex-start;
     padding: 1.2rem;
     box-shadow: var(--shadow);
+    gap: 0.9rem;
   }
   .nav-links.open { display: flex; }
   .menu-toggle { display: block; }
-  .hero h1 { font-size: calc(2.3rem + 2pt); }
-  .hero p { font-size: calc(1.05rem + 2pt); }
-  .hero { min-height: 55vh; }
+  .philosophy-row { grid-template-columns: 1fr; }
+  .philosophy-row .headshot,
+  .philosophy-row .brand-mark { max-width: min(100%, 320px); margin-inline: auto; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-content { grid-template-columns: 1fr; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .hero p { font-size: clamp(0.98rem, 3.6vw, 1.15rem); }
+  .hero { min-height: 52vh; }
   section { padding: 3rem 1.2rem; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  .btn { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0.7rem 1rem; }
+  .logo img { height: 40px; }
+  .hero-content { padding: 1.5rem 1rem; }
+  .hero-actions .btn { width: 100%; }
+  section { padding: 2.4rem 1rem; }
 }
 
 .hp-field {
@@ -254,14 +282,17 @@ footer {
 
 .philosophy-row {
   display: grid;
-  grid-template-columns: 1fr 1.35fr 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr) minmax(0, 0.9fr);
+  gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
   margin-top: 2rem;
 }
 
+.philosophy-row > * { min-width: 0; }
+
 .philosophy-row img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 16px;
@@ -270,18 +301,22 @@ footer {
 }
 
 .philosophy-row .headshot {
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: clamp(240px, 38vw, 440px);
+  aspect-ratio: auto;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
 }
 
 .philosophy-row .brand-mark {
+  width: min(100%, 260px);
+  height: auto;
+  max-height: 220px;
   object-fit: contain;
   background: transparent;
   box-shadow: none;
   border-radius: 0;
-  max-height: 280px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .philosophy-copy {
@@ -292,16 +327,24 @@ footer {
   margin: 1rem 0;
 }
 
-@media (max-width: 768px) {
-  .philosophy-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
 
-  .philosophy-row .headshot,
-  .philosophy-row .brand-mark {
-    max-width: 280px;
-    margin: 0 auto;
+.contact-aside img {
+  width: min(100%, 280px);
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 980px) {
+  .philosophy-row .headshot {
+    height: clamp(280px, 70vw, 420px);
   }
 }
 .case-study {
@@ -317,4 +360,13 @@ footer {
   border-left: 3px solid var(--navy);
   padding-left: 1rem;
   margin: 1rem 0;
+}
+
+@media (max-width: 980px) {
+  .philosophy-row { grid-template-columns: 1fr; }
+  .philosophy-row .headshot,
+  .philosophy-row .brand-mark { max-width: min(100%, 320px); margin-inline: auto; }
+  .philosophy-row .headshot { height: clamp(280px, 70vw, 420px); }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
 }

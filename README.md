@@ -1,6 +1,6 @@
 # BHC-web
 
-**BurkeHaven Counseling LLC** official website — **v0.1.0**
+**BurkeHaven Counseling LLC** official website — **v0.1.1**
 
 A multi-page static website for BurkeHaven Counseling, a family-focused counseling practice in Bethany, Oklahoma, serving the Oklahoma City metro area.
 

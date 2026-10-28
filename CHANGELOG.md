@@ -2,6 +2,13 @@
 
 All notable changes to the BurkeHaven Counseling website will be documented in this file.
 
+## [0.1.1] - 2026-10-27
+
+### Changed
+- Responsive layout on every page: fluid type, wrapping hero buttons, and a menu that opens before the navigation overflows
+- About page headshot and logo scale to their columns instead of staying at full photo size
+- Contact layout and card grids collapse cleanly on tablets and phones
+
 ## [0.1.0] - 2026-10-27
 
 ### Added
